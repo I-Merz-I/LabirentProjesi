@@ -5,16 +5,18 @@
 #include "Yigit.hpp"
 #include <string>
 
+// Dokümanda belirtildiği gibi sabit boyutlar
+#define YUKSEKLIK 20
+#define GENISLIK 50
+
 typedef enum {
     ASAGI, SOL, YUKARI, SAG
 } Yon;
 
 class Labirent {
 private:
-    char** harita;          
-    bool** ziyaretEdildi;   // ZİYARET KONTROLÜ İÇİN YENİ EKLENDİ
-    int yukseklik;          
-    int genislik;           
+    char harita[YUKSEKLIK][GENISLIK];      // Sabit boyutlu dizi
+    bool ziyaretEdildi[YUKSEKLIK][GENISLIK]; // Ziyaret kontrolü
     
     Konum baslangic;        
     Konum cikis;            
