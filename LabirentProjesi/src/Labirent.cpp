@@ -13,18 +13,7 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-// Konsol imlecini gizler
-void imleciGizle() {
-    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_CURSOR_INFO cursorInfo;
-    GetConsoleCursorInfo(out, &cursorInfo);
-    cursorInfo.bVisible = false;
-    SetConsoleCursorInfo(out, &cursorInfo);
-}
-
-Labirent::Labirent(string dosyaAdi) {
-    imleciGizle();
-    
+Labirent::Labirent(string dosyaAdi) {   
     // Tüm haritayı boşlukla doldur
     for (int i = 0; i < YUKSEKLIK; i++) {
         for (int j = 0; j < GENISLIK; j++) {
