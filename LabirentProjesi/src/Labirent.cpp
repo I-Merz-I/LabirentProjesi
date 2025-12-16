@@ -115,7 +115,7 @@ void Labirent::coz() {
     // Başlangıç noktasını yığıta ekle
     yolYigiti.ekle(baslangic);
     ziyaretEdildi[baslangic.x][baslangic.y] = true;
-    harita[baslangic.x][baslangic.y] = 'B';
+   
     
     Konum suankiKonum;
     Konum oncekiKonum = baslangic;
@@ -123,7 +123,10 @@ void Labirent::coz() {
     // Yığıt boş olana kadar devam et
     while (!yolYigiti.bosMu()) {
         // Yığıtın tepesindeki konumu al
+        harita[baslangic.x][baslangic.y] = 'B';
+        
         suankiKonum = yolYigiti.getir();
+        
         
         // Önceki konuma iz bırak
         if (oncekiKonum.x != baslangic.x || oncekiKonum.y != baslangic.y) {
